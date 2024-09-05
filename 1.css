@@ -43,3 +43,12 @@ p strong {
     background-color: #243918;
     color: #e3b84df4;
 }
+footer{
+    margin: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    color:antiquewhite ;
+    background-color: #bed4d356;
+    margin-bottom: 1rem;
+}
+
