@@ -5,20 +5,25 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     letter-spacing: 2px;
     font-weight: 200;
     color: #bed4d3;
-    background-color: #0c1d25;
+    background-color: #0c0e25;
     font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
+    /* font-optical-sizing: auto; */
     padding: 1rem;
+}
+.main{
+    margin: 0 1rem;
 }
 h1 {
     color: yellowgreen;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-top: 5rem;
 }
 
 strong {
@@ -43,6 +48,7 @@ p strong {
     background-color: #243918;
     color: #e3b84df4;
 }
+
 footer{
     margin: 2rem;
     border-radius: 1rem;
@@ -52,3 +58,6 @@ footer{
     margin-bottom: 1rem;
 }
 
+li code{
+    font-size: 0.9rem;
+}
