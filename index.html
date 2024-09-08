@@ -1,774 +1,795 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>NPM, Parcel, and Webpack Questions and Answers</title>
-        <link rel="stylesheet" href="1.css" />
-    </head>
-    <body>
-        <div class="main">
-        <div class="1">
-            <h1>Igniting our App</h1>
-            <p class="mb-2 last:mb-0">
-                <strong>
-                    1. What is&nbsp;
-                    <code> NPM </code>
-                    ?
-                </strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                NPM stands for Node Package Manager. It is a package manager for
-                JavaScript and is the default package manager for the JavaScript
-                runtime environment Node.js. NPM allows developers to easily
-                install, update, and manage packages (libraries, frameworks, and
-                tools) for their projects.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>
-                    2. What is&nbsp;
-                    <code> Parcel/Webpack </code>
-                    ? Why do we need it?
-                </strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                Parcel and Webpack are both popular bundlers for JavaScript
-                applications. A bundler is a tool that takes your code,
-                transforms it, and bundles it into a single file that can be
-                executed by a web browser.
-            </p>
-            <p class="mb-2 last:mb-0">
-                Parcel is a fast, zero-configuration bundler that supports many
-                features out of the box, such as code splitting, tree shaking,
-                and hot module replacement.
-            </p>
-            <p class="mb-2 last:mb-0">
-                Webpack is a more mature and widely-used bundler that requires
-                more configuration, but offers a wide range of plugins and
-                customization options.
-            </p>
-            <p class="mb-2 last:mb-0">
-                We need a bundler like Parcel or Webpack because modern web
-                applications often consist of many small JavaScript files, which
-                can lead to performance issues and slow page loads. A bundler
-                helps to:
-            </p>
-            <ul>
-                <li>Reduce the number of HTTP requests</li>
-                <li>Compress and minify code</li>
-                <li>Improve page load times</li>
-                <li>Enable features like code splitting and tree shaking</li>
-            </ul>
-            <p class="mb-2 last:mb-0">
-                <strong>
-                    3. What is&nbsp;
-                    <code> .parcel-cache </code>
-                    ?
-                </strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                The&nbsp;
-                <code> .parcel-cache </code>
-                &nbsp;directory is a cache folder created by Parcel to store
-                intermediate build results. This cache helps to speed up
-                subsequent builds by reusing previously compiled code. You can
-                safely delete this folder if you need to, but it's recommended
-                to keep it to improve build performance.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>
-                    4. What is&nbsp;
-                    <code> npx </code>
-                    ?
-                </strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code> npx </code>
-                &nbsp;is a package runner tool that comes bundled with NPM. It
-                allows you to run packages without installing them locally or
-                globally.&nbsp;
-                <code> npx </code>
-                &nbsp;is useful for running one-off commands or testing packages
-                without polluting your project's dependencies.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>
-                    5. What is the difference between&nbsp;
-                    <code> dependencies </code>
-                    &nbsp;vs&nbsp;
-                    <code> devDependencies </code>
-                    ?
-                </strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                In your&nbsp;
-                <code> package.json </code>
-                &nbsp;file,&nbsp;
-                <code> dependencies </code>
-                &nbsp;and&nbsp;
-                <code> devDependencies </code>
-                &nbsp;are two separate sections that list packages required by
-                your project.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code> dependencies </code>
-                &nbsp;lists packages that are required by your project at
-                runtime. These packages are installed when you run&nbsp;
-                <code> npm install </code>
-                &nbsp;and are included in your project's bundle.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code> devDependencies </code>
-                &nbsp;lists packages that are only required during development,
-                such as testing frameworks, linters, and bundlers. These
-                packages are not included in your project's bundle and are only
-                installed when you run&nbsp;
-                <code> npm install </code>
-                &nbsp;with the&nbsp;
-                <code> --dev </code>
-                &nbsp;flag.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong> 6. What is Tree Shaking? </strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                Tree shaking is a feature of bundlers like Parcel and Webpack
-                that removes unused code from your project's bundle. This helps
-                to reduce the bundle size and improve page load times. Tree
-                shaking works by analyzing your code and removing any modules or
-                functions that are not actually used.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong> 7. What is Hot Module Replacement? </strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                Hot Module Replacement (HMR) is a feature of bundlers like
-                Parcel and Webpack that allows you to update your code without
-                requiring a full page reload. When you make changes to your
-                code, HMR swaps out the updated modules in your application
-                without restarting the entire application. This helps to improve
-                development productivity and reduce the time it takes to see
-                changes in your application.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>
-                    8. List down your favourite 5 superpowers of Parcel and
-                    describe any 3 of them in your own words.
-                </strong>
-            </p>
-            <p class="mb-2 last:mb-0">Here are 5 superpowers of Parcel:</p>
-            <ol>
-                <li>
-                    <strong> Zero-configuration </strong>
-                    : Parcel requires no configuration to get started, making it
-                    easy to use for new projects.
-                </li>
-                <li>
-                    <strong> Code splitting </strong>
-                    : Parcel allows you to split your code into smaller chunks,
-                    reducing the initial payload size and improving page load
-                    times.
-                </li>
-                <li>
-                    <strong> Tree shaking </strong>
-                    : Parcel's tree shaking feature removes unused code from
-                    your bundle, reducing the overall size and improving
-                    performance.
-                </li>
-                <li>
-                    <strong> Hot Module Replacement </strong>
-                    : Parcel's HMR feature allows you to update your code
-                    without requiring a full page reload.
-                </li>
-                <li>
-                    <strong> Fast build times </strong>
-                    : Parcel is designed for speed and can build your project
-                    quickly, even for large applications.
-                </li>
-            </ol>
-            <p class="mb-2 last:mb-0">
-                Here are three of these superpowers described in more detail:
-            </p>
-            <ul>
-                <li>
-                    <strong> Zero-configuration </strong>
-                    : Parcel is designed to be easy to use, with no
-                    configuration required to get started. This means you can
-                    focus on writing code instead of setting up a complex build
-                    process.
-                </li>
-                <li>
-                    <strong> Code splitting </strong>
-                    : Parcel's code splitting feature allows you to break up
-                    your code into smaller chunks, each of which can be loaded
-                    on demand. This reduces the initial payload size and
-                    improves page load times, making your application feel
-                    faster and more responsive.
-                </li>
-                <li>
-                    <strong> Tree shaking </strong>
-                    : Parcel's tree shaking feature is a game-changer for
-                    performance. By removing unused code from your bundle, you
-                    can significantly reduce the overall size and improve page
-                    load times. This feature is especially useful for large
-                    applications with many dependencies.
-                </li>
-            </ul>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NPM, Parcel, and Webpack Questions and Answers</title>
+		<link rel="stylesheet" href="1.css" />
+	</head>
+	<body>
+		<div class="main">
+			<div class="1">
+				<h1>Igniting our App</h1>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						1. What is&nbsp;
+						<code> NPM </code>
+						?
+					</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					NPM stands for Node Package Manager. It is a package manager
+					for JavaScript and is the default package manager for the
+					JavaScript runtime environment Node.js. NPM allows
+					developers to easily install, update, and manage packages
+					(libraries, frameworks, and tools) for their projects.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						2. What is&nbsp;
+						<code> Parcel/Webpack </code>
+						? Why do we need it?
+					</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					Parcel and Webpack are both popular bundlers for JavaScript
+					applications. A bundler is a tool that takes your code,
+					transforms it, and bundles it into a single file that can be
+					executed by a web browser.
+				</p>
+				<p class="mb-2 last:mb-0">
+					Parcel is a fast, zero-configuration bundler that supports
+					many features out of the box, such as code splitting, tree
+					shaking, and hot module replacement.
+				</p>
+				<p class="mb-2 last:mb-0">
+					Webpack is a more mature and widely-used bundler that
+					requires more configuration, but offers a wide range of
+					plugins and customization options.
+				</p>
+				<p class="mb-2 last:mb-0">
+					We need a bundler like Parcel or Webpack because modern web
+					applications often consist of many small JavaScript files,
+					which can lead to performance issues and slow page loads. A
+					bundler helps to:
+				</p>
+				<ul>
+					<li>Reduce the number of HTTP requests</li>
+					<li>Compress and minify code</li>
+					<li>Improve page load times</li>
+					<li>
+						Enable features like code splitting and tree shaking
+					</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						3. What is&nbsp;
+						<code> .parcel-cache </code>
+						?
+					</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					The&nbsp;
+					<code> .parcel-cache </code>
+					&nbsp;directory is a cache folder created by Parcel to store
+					intermediate build results. This cache helps to speed up
+					subsequent builds by reusing previously compiled code. You
+					can safely delete this folder if you need to, but it's
+					recommended to keep it to improve build performance.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						4. What is&nbsp;
+						<code> npx </code>
+						?
+					</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code> npx </code>
+					&nbsp;is a package runner tool that comes bundled with NPM.
+					It allows you to run packages without installing them
+					locally or globally.&nbsp;
+					<code> npx </code>
+					&nbsp;is useful for running one-off commands or testing
+					packages without polluting your project's dependencies.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						5. What is the difference between&nbsp;
+						<code> dependencies </code>
+						&nbsp;vs&nbsp;
+						<code> devDependencies </code>
+						?
+					</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					In your&nbsp;
+					<code> package.json </code>
+					&nbsp;file,&nbsp;
+					<code> dependencies </code>
+					&nbsp;and&nbsp;
+					<code> devDependencies </code>
+					&nbsp;are two separate sections that list packages required
+					by your project.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code> dependencies </code>
+					&nbsp;lists packages that are required by your project at
+					runtime. These packages are installed when you run&nbsp;
+					<code> npm install </code>
+					&nbsp;and are included in your project's bundle.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code> devDependencies </code>
+					&nbsp;lists packages that are only required during
+					development, such as testing frameworks, linters, and
+					bundlers. These packages are not included in your project's
+					bundle and are only installed when you run&nbsp;
+					<code> npm install </code>
+					&nbsp;with the&nbsp;
+					<code> --dev </code>
+					&nbsp;flag.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 6. What is Tree Shaking? </strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					Tree shaking is a feature of bundlers like Parcel and
+					Webpack that removes unused code from your project's bundle.
+					This helps to reduce the bundle size and improve page load
+					times. Tree shaking works by analyzing your code and
+					removing any modules or functions that are not actually
+					used.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 7. What is Hot Module Replacement? </strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					Hot Module Replacement (HMR) is a feature of bundlers like
+					Parcel and Webpack that allows you to update your code
+					without requiring a full page reload. When you make changes
+					to your code, HMR swaps out the updated modules in your
+					application without restarting the entire application. This
+					helps to improve development productivity and reduce the
+					time it takes to see changes in your application.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						8. List down your favourite 5 superpowers of Parcel and
+						describe any 3 of them in your own words.
+					</strong>
+				</p>
+				<p class="mb-2 last:mb-0">Here are 5 superpowers of Parcel:</p>
+				<ol>
+					<li>
+						<strong> Zero-configuration </strong>
+						: Parcel requires no configuration to get started,
+						making it easy to use for new projects.
+					</li>
+					<li>
+						<strong> Code splitting </strong>
+						: Parcel allows you to split your code into smaller
+						chunks, reducing the initial payload size and improving
+						page load times.
+					</li>
+					<li>
+						<strong> Tree shaking </strong>
+						: Parcel's tree shaking feature removes unused code from
+						your bundle, reducing the overall size and improving
+						performance.
+					</li>
+					<li>
+						<strong> Hot Module Replacement </strong>
+						: Parcel's HMR feature allows you to update your code
+						without requiring a full page reload.
+					</li>
+					<li>
+						<strong> Fast build times </strong>
+						: Parcel is designed for speed and can build your
+						project quickly, even for large applications.
+					</li>
+				</ol>
+				<p class="mb-2 last:mb-0">
+					Here are three of these superpowers described in more
+					detail:
+				</p>
+				<ul>
+					<li>
+						<strong> Zero-configuration </strong>
+						: Parcel is designed to be easy to use, with no
+						configuration required to get started. This means you
+						can focus on writing code instead of setting up a
+						complex build process.
+					</li>
+					<li>
+						<strong> Code splitting </strong>
+						: Parcel's code splitting feature allows you to break up
+						your code into smaller chunks, each of which can be
+						loaded on demand. This reduces the initial payload size
+						and improves page load times, making your application
+						feel faster and more responsive.
+					</li>
+					<li>
+						<strong> Tree shaking </strong>
+						: Parcel's tree shaking feature is a game-changer for
+						performance. By removing unused code from your bundle,
+						you can significantly reduce the overall size and
+						improve page load times. This feature is especially
+						useful for large applications with many dependencies.
+					</li>
+				</ul>
 
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >9. What is&nbsp;<code>.gitignore</code>? What should we add
-                    and not add into it?</strong
-                >
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code>.gitignore</code>&nbsp;is a file that tells Git which
-                files or directories to ignore in your project. This is useful
-                for excluding files that are not essential to your project, such
-                as build artifacts, logs, or configuration files.
-            </p>
-            <p class="mb-2 last:mb-0">
-                You should add files and directories
-                to&nbsp;<code>.gitignore</code>&nbsp;that:
-            </p>
-            <ul>
-                <li>
-                    Are generated by your build process
-                    (e.g.,&nbsp;<code>dist</code>,&nbsp;<code>build</code>,&nbsp;<code>node_modules</code>)
-                </li>
-                <li>
-                    Contain sensitive information (e.g., API keys, passwords)
-                </li>
-                <li>
-                    Are not essential to your project (e.g., logs, temporary
-                    files)
-                </li>
-            </ul>
-            <p class="mb-2 last:mb-0">
-                You should not add files and directories
-                to&nbsp;<code>.gitignore</code>&nbsp;that:
-            </p>
-            <ul>
-                <li>
-                    Are essential to your project (e.g., source code,
-                    configuration files)
-                </li>
-                <li>Need to be tracked by Git (e.g., dependencies, assets)</li>
-            </ul>
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >10. What is the difference
-                    between&nbsp;<code>package.json</code>&nbsp;and&nbsp;<code>package-lock.json</code>?</strong
-                >
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code>package.json</code>&nbsp;is a file that contains metadata
-                about your project, including dependencies, scripts, and
-                configuration options.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code>package-lock.json</code>&nbsp;is a file that contains a
-                snapshot of your project's dependencies, including the exact
-                versions and hashes of each package. This file is generated by
-                NPM when you run&nbsp;<code>npm install</code>&nbsp;and is used
-                to ensure that your project's dependencies are consistent across
-                different environments.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >11. Why should I not
-                    modify&nbsp;<code>package-lock.json</code>?</strong
-                >
-            </p>
-            <p class="mb-2 last:mb-0">
-                You should not
-                modify&nbsp;<code>package-lock.json</code>&nbsp;because it is
-                generated by NPM and is used to ensure that your project's
-                dependencies are consistent across different environments.
-                Modifying this file can lead to unexpected behavior or errors in
-                your project.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >12. What is&nbsp;<code>node_modules</code>? Is it a good
-                    idea to push that on git?</strong
-                >
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code>node_modules</code>&nbsp;is a directory that contains the
-                dependencies installed by NPM. It is not a good idea to push
-                this directory to Git because it can be large and is easily
-                reproducible by running&nbsp;<code>npm install</code>.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >13. What is the&nbsp;<code>dist</code>&nbsp;folder?</strong
-                >
-            </p>
-            <p class="mb-2 last:mb-0">
-                The&nbsp;<code>dist</code>&nbsp;folder is a directory that
-                contains the compiled and bundled code for your project. This
-                folder is typically generated by a bundler like Parcel or
-                Webpack and is used to serve your application to users.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>14. What is&nbsp;<code>browserlists</code>?</strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                <code>browserlists</code>&nbsp;is a configuration file that
-                specifies which browsers and versions your project supports.
-                This file is used by tools like Babel and Autoprefixer to ensure
-                that your code is compatible with the specified browsers.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >Reading about different bundlers: vite, webpack,
-                    parcel</strong
-                >
-            </p>
-            <p class="mb-2 last:mb-0">
-                Vite, Webpack, and Parcel are all popular bundlers for
-                JavaScript applications. Each has its own strengths and
-                weaknesses, and the choice of which one to use depends on your
-                project's specific needs.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>15. Reading about: ^ - caret and ~ - tilda</strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                The caret (<code>^</code>) and tilda (<code>~</code>) symbols
-                are used in&nbsp;<code>package.json</code>&nbsp;to specify
-                version ranges for dependencies.
-            </p>
-            <p class="mb-2 last:mb-0">
-                The caret (<code>^</code>) symbol indicates that the dependency
-                should be updated to the latest version within the same major
-                version range. For example,&nbsp;<code>^1.2.3</code>&nbsp;would
-                update to the latest version within
-                the&nbsp;<code>1.x</code>&nbsp;range.
-            </p>
-            <p class="mb-2 last:mb-0">
-                The tilda (<code>~</code>) symbol indicates that the dependency
-                should be updated to the latest version within the same minor
-                version range. For example,&nbsp;<code>~1.2.3</code>&nbsp;would
-                update to the latest version within
-                the&nbsp;<code>1.2.x</code>&nbsp;range.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >16. Reading about Script types in html (MDN Docs)</strong
-                >
-            </p>
-            <p class="mb-2 last:mb-0">
-                Script types in HTML refer to
-                the&nbsp;<code>type</code>&nbsp;attribute of
-                the&nbsp;<code>&lt;script&gt;</code>&nbsp;tag, which specifies
-                the type of script being loaded. The most common script types
-                are&nbsp;<code>text/javascript</code>&nbsp;and&nbsp;<code>module</code>,
-                which specify whether the script should be loaded as a
-                traditional JavaScript file or as an ES6 module.
-            </p>
-        </div>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>9. What is&nbsp;<code>.gitignore</code>? What should we
+						add and not add into it?</strong
+					>
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code>.gitignore</code>&nbsp;is a file that tells Git which
+					files or directories to ignore in your project. This is
+					useful for excluding files that are not essential to your
+					project, such as build artifacts, logs, or configuration
+					files.
+				</p>
+				<p class="mb-2 last:mb-0">
+					You should add files and directories
+					to&nbsp;<code>.gitignore</code>&nbsp;that:
+				</p>
+				<ul>
+					<li>
+						Are generated by your build process
+						(e.g.,&nbsp;<code>dist</code>,&nbsp;<code>build</code>,&nbsp;<code>node_modules</code>)
+					</li>
+					<li>
+						Contain sensitive information (e.g., API keys,
+						passwords)
+					</li>
+					<li>
+						Are not essential to your project (e.g., logs, temporary
+						files)
+					</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					You should not add files and directories
+					to&nbsp;<code>.gitignore</code>&nbsp;that:
+				</p>
+				<ul>
+					<li>
+						Are essential to your project (e.g., source code,
+						configuration files)
+					</li>
+					<li>
+						Need to be tracked by Git (e.g., dependencies, assets)
+					</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>10. What is the difference
+						between&nbsp;<code>package.json</code>&nbsp;and&nbsp;<code>package-lock.json</code>?</strong
+					>
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code>package.json</code>&nbsp;is a file that contains
+					metadata about your project, including dependencies,
+					scripts, and configuration options.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code>package-lock.json</code>&nbsp;is a file that contains
+					a snapshot of your project's dependencies, including the
+					exact versions and hashes of each package. This file is
+					generated by NPM when you run&nbsp;<code>npm install</code
+					>&nbsp;and is used to ensure that your project's
+					dependencies are consistent across different environments.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>11. Why should I not
+						modify&nbsp;<code>package-lock.json</code>?</strong
+					>
+				</p>
+				<p class="mb-2 last:mb-0">
+					You should not
+					modify&nbsp;<code>package-lock.json</code>&nbsp;because it
+					is generated by NPM and is used to ensure that your
+					project's dependencies are consistent across different
+					environments. Modifying this file can lead to unexpected
+					behavior or errors in your project.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>12. What is&nbsp;<code>node_modules</code>? Is it a
+						good idea to push that on git?</strong
+					>
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code>node_modules</code>&nbsp;is a directory that contains
+					the dependencies installed by NPM. It is not a good idea to
+					push this directory to Git because it can be large and is
+					easily reproducible by running&nbsp;<code>npm install</code
+					>.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>13. What is
+						the&nbsp;<code>dist</code>&nbsp;folder?</strong
+					>
+				</p>
+				<p class="mb-2 last:mb-0">
+					The&nbsp;<code>dist</code>&nbsp;folder is a directory that
+					contains the compiled and bundled code for your project.
+					This folder is typically generated by a bundler like Parcel
+					or Webpack and is used to serve your application to users.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>14. What is&nbsp;<code>browserlists</code>?</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					<code>browserlists</code>&nbsp;is a configuration file that
+					specifies which browsers and versions your project supports.
+					This file is used by tools like Babel and Autoprefixer to
+					ensure that your code is compatible with the specified
+					browsers.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>Reading about different bundlers: vite, webpack,
+						parcel</strong
+					>
+				</p>
+				<p class="mb-2 last:mb-0">
+					Vite, Webpack, and Parcel are all popular bundlers for
+					JavaScript applications. Each has its own strengths and
+					weaknesses, and the choice of which one to use depends on
+					your project's specific needs.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>15. Reading about: ^ - caret and ~ - tilda</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					The caret (<code>^</code>) and tilda (<code>~</code>)
+					symbols are used in&nbsp;<code>package.json</code>&nbsp;to
+					specify version ranges for dependencies.
+				</p>
+				<p class="mb-2 last:mb-0">
+					The caret (<code>^</code>) symbol indicates that the
+					dependency should be updated to the latest version within
+					the same major version range. For
+					example,&nbsp;<code>^1.2.3</code>&nbsp;would update to the
+					latest version within the&nbsp;<code>1.x</code>&nbsp;range.
+				</p>
+				<p class="mb-2 last:mb-0">
+					The tilda (<code>~</code>) symbol indicates that the
+					dependency should be updated to the latest version within
+					the same minor version range. For
+					example,&nbsp;<code>~1.2.3</code>&nbsp;would update to the
+					latest version within
+					the&nbsp;<code>1.2.x</code>&nbsp;range.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>16. Reading about Script types in html (MDN
+						Docs)</strong
+					>
+				</p>
+				<p class="mb-2 last:mb-0">
+					Script types in HTML refer to
+					the&nbsp;<code>type</code>&nbsp;attribute of
+					the&nbsp;<code>&lt;script&gt;</code>&nbsp;tag, which
+					specifies the type of script being loaded. The most common
+					script types
+					are&nbsp;<code>text/javascript</code>&nbsp;and&nbsp;<code>module</code>,
+					which specify whether the script should be loaded as a
+					traditional JavaScript file or as an ES6 module.
+				</p>
+			</div>
 
-        <div class="2">
-            <h1>Laying the Foundation</h1>
-            <p class="mb-2 last:mb-0">
-                <strong>JSX</strong>&nbsp;JSX (JavaScript XML) is a syntax
-                extension for JavaScript that allows you to write HTML-like code
-                in your JavaScript files. It's used to create React elements,
-                which are then rendered to the DOM. JSX makes it easier to write
-                React applications by providing a more concise and expressive
-                way of creating UI components.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>React.createElement vs JSX</strong
-                >&nbsp;<code>React.createElement</code>&nbsp;is a function that
-                creates a new React element. It takes three arguments: the type
-                of element, the props, and the children. For example:&nbsp;<code
-                    >React.createElement('div', { className: 'container' },
-                    'Hello World!')</code
-                >.
-            </p>
-            <p class="mb-2 last:mb-0">
-                JSX, on the other hand, is a syntax sugar on top
-                of&nbsp;<code>React.createElement</code>. When you write JSX
-                code, it gets compiled
-                to&nbsp;<code>React.createElement</code>&nbsp;calls. For
-                example:&nbsp;<code
-                    >&lt;div className="container"&gt;Hello
-                    World!&lt;/div&gt;</code
-                >&nbsp;is equivalent to
-                the&nbsp;<code>React.createElement</code>&nbsp;call above.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>Benefits of JSX</strong>&nbsp;The benefits of using JSX
-                include:
-            </p>
-            <ul>
-                <li>
-                    <strong>Concise code</strong>: JSX allows you to write more
-                    concise code, making it easier to read and maintain.
-                </li>
-                <li>
-                    <strong>Easier debugging</strong>: With JSX, you can use the
-                    browser's developer tools to inspect the DOM, making it
-                    easier to debug your application.
-                </li>
-                <li>
-                    <strong>Improved performance</strong>: JSX can improve
-                    performance by reducing the number of DOM mutations.
-                </li>
-            </ul>
-            <p class="mb-2 last:mb-0">
-                <strong>Behind the Scenes of JSX</strong>&nbsp;When you write
-                JSX code, it gets compiled into JavaScript code that
-                uses&nbsp;<code>React.createElement</code>&nbsp;to create React
-                elements. This compilation step is usually done by a transpiler
-                like Babel or a bundler like Parcel.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>Babel &amp; Parcel role in JSX</strong>&nbsp;Babel is a
-                transpiler that converts modern JavaScript code (including JSX)
-                into older JavaScript syntax that can be executed by older
-                browsers. Parcel is a bundler that takes your code, including
-                JSX files, and bundles them into a single file that can be
-                loaded by the browser.
-            </p>
-            <p class="mb-2 last:mb-0">
-                Both Babel and Parcel play a crucial role in making JSX work.
-                Babel compiles JSX code into JavaScript code, while Parcel
-                bundles the compiled code into a single file.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>Components</strong>&nbsp;In React, a component is a
-                reusable piece of code that represents a UI element. Components
-                can contain other components, making it easy to build complex
-                UIs.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>Functional Components</strong>&nbsp;A functional
-                component is a type of component that is defined as a pure
-                function. It takes in props and returns a React element.
-                Functional components are easier to write and reason about than
-                class components.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>Composing Components</strong>&nbsp;Composing components
-                means combining multiple components to create a new component.
-                This is a key concept in React, as it allows you to build
-                complex UIs by breaking them down into smaller, reusable
-                components.
-            </p>
-            <p class="mb-2 last:mb-0">
-                <strong>Superpowers of JSX</strong> JSX is a syntax extension
-                for JavaScript that allows you to write HTML-like code in your
-                JavaScript files. Its superpowers include:
-                <br />
-                <br />Declarative code that describes what you want to see in
-                your UI <br />Components as functions for easy reuse and
-                composition <br />
-                JSX expressions for conditional rendering and data binding
-                <br />JSX attributes for dynamic attribute values <br />JSX
-                children for conditional rendering and lists Type safety for
-                catching type errors at compile-time Improved readability with
-                HTML-like code <br />
-                <br />These features make JSX a powerful tool for building user
-                interfaces, especially with React.
-            </p>
+			<div class="2">
+				<h1>Laying the Foundation</h1>
+				<p class="mb-2 last:mb-0">
+					<strong>JSX</strong>&nbsp;JSX (JavaScript XML) is a syntax
+					extension for JavaScript that allows you to write HTML-like
+					code in your JavaScript files. It's used to create React
+					elements, which are then rendered to the DOM. JSX makes it
+					easier to write React applications by providing a more
+					concise and expressive way of creating UI components.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>React.createElement vs JSX</strong
+					>&nbsp;<code>React.createElement</code>&nbsp;is a function
+					that creates a new React element. It takes three arguments:
+					the type of element, the props, and the children. For
+					example:&nbsp;<code
+						>React.createElement('div', { className: 'container' },
+						'Hello World!')</code
+					>.
+				</p>
+				<p class="mb-2 last:mb-0">
+					JSX, on the other hand, is a syntax sugar on top
+					of&nbsp;<code>React.createElement</code>. When you write JSX
+					code, it gets compiled
+					to&nbsp;<code>React.createElement</code>&nbsp;calls. For
+					example:&nbsp;<code
+						>&lt;div className="container"&gt;Hello
+						World!&lt;/div&gt;</code
+					>&nbsp;is equivalent to
+					the&nbsp;<code>React.createElement</code>&nbsp;call above.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>Benefits of JSX</strong>&nbsp;The benefits of using
+					JSX include:
+				</p>
+				<ul>
+					<li>
+						<strong>Concise code</strong>: JSX allows you to write
+						more concise code, making it easier to read and
+						maintain.
+					</li>
+					<li>
+						<strong>Easier debugging</strong>: With JSX, you can use
+						the browser's developer tools to inspect the DOM, making
+						it easier to debug your application.
+					</li>
+					<li>
+						<strong>Improved performance</strong>: JSX can improve
+						performance by reducing the number of DOM mutations.
+					</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					<strong>Behind the Scenes of JSX</strong>&nbsp;When you
+					write JSX code, it gets compiled into JavaScript code that
+					uses&nbsp;<code>React.createElement</code>&nbsp;to create
+					React elements. This compilation step is usually done by a
+					transpiler like Babel or a bundler like Parcel.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>Babel &amp; Parcel role in JSX</strong>&nbsp;Babel
+					is a transpiler that converts modern JavaScript code
+					(including JSX) into older JavaScript syntax that can be
+					executed by older browsers. Parcel is a bundler that takes
+					your code, including JSX files, and bundles them into a
+					single file that can be loaded by the browser.
+				</p>
+				<p class="mb-2 last:mb-0">
+					Both Babel and Parcel play a crucial role in making JSX
+					work. Babel compiles JSX code into JavaScript code, while
+					Parcel bundles the compiled code into a single file.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>Components</strong>&nbsp;In React, a component is a
+					reusable piece of code that represents a UI element.
+					Components can contain other components, making it easy to
+					build complex UIs.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>Functional Components</strong>&nbsp;A functional
+					component is a type of component that is defined as a pure
+					function. It takes in props and returns a React element.
+					Functional components are easier to write and reason about
+					than class components.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>Composing Components</strong>&nbsp;Composing
+					components means combining multiple components to create a
+					new component. This is a key concept in React, as it allows
+					you to build complex UIs by breaking them down into smaller,
+					reusable components.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>Superpowers of JSX</strong> JSX is a syntax
+					extension for JavaScript that allows you to write HTML-like
+					code in your JavaScript files. Its superpowers include:
+					<br />
+					<br />Declarative code that describes what you want to see
+					in your UI <br />Components as functions for easy reuse and
+					composition <br />
+					JSX expressions for conditional rendering and data binding
+					<br />JSX attributes for dynamic attribute values <br />JSX
+					children for conditional rendering and lists Type safety for
+					catching type errors at compile-time Improved readability
+					with HTML-like code <br />
+					<br />These features make JSX a powerful tool for building
+					user interfaces, especially with React.
+				</p>
 
-            <p class="mb-2 last:mb-0">
-                <strong
-                    >Role of type attribute in script tag? What options can I
-                    use there?</strong
-                >
-            </p>
+				<p class="mb-2 last:mb-0">
+					<strong
+						>Role of type attribute in script tag? What options can
+						I use there?</strong
+					>
+				</p>
 
-            <p class="mb-2 last:mb-0">
-                The&nbsp;<code>type</code>&nbsp;attribute in
-                a&nbsp;<code>&lt;script&gt;</code>&nbsp;tag specifies the MIME
-                type of the script. It's used to indicate the type of script
-                being used, such as JavaScript, JSON, or another language.
-            </p>
-            <p class="mb-2 last:mb-0">
-                The most common value for
-                the&nbsp;<code>type</code>&nbsp;attribute
-                is&nbsp;<code>text/javascript</code>, which indicates that the
-                script is written in JavaScript. However, you can also use other
-                values depending on the type of script you're using.
-            </p>
-            <p class="mb-2 last:mb-0">
-                Here are some common options you can use for
-                the&nbsp;<code>type</code>&nbsp;attribute:
-            </p>
-            <ul>
-                <li>
-                    <code>text/javascript</code>: This is the default value and
-                    indicates that the script is written in JavaScript.
-                </li>
-                <li>
-                    <code>application/javascript</code>: This is an alternative
-                    to&nbsp;<code>text/javascript</code>&nbsp;and is also used
-                    for JavaScript scripts.
-                </li>
-                <li>
-                    <code>module</code>: This value is used for JavaScript
-                    modules, which are a new feature in modern JavaScript.
-                </li>
-                <li>
-                    <code>application/json</code>: This value is used for JSON
-                    data, which can be used to store or transport data in a
-                    script.
-                </li>
-                <li>
-                    <code>text/ecmascript</code>: This value is used for scripts
-                    written in ECMAScript, which is a standardized version of
-                    JavaScript.
-                </li>
-            </ul>
-            <p class="mb-2 last:mb-0">
-                It's worth noting that in HTML5,
-                the&nbsp;<code>type</code>&nbsp;attribute is not required for
-                the&nbsp;<code>&lt;script&gt;</code>&nbsp;tag, and the default
-                value is assumed to be&nbsp;<code>text/javascript</code>.
-                However, it's still a good practice to include
-                the&nbsp;<code>type</code>&nbsp;attribute for clarity and to
-                ensure compatibility with older browsers.
-            </p>
-            <p>
-                <strong
-                    >Role of type attribute in script tag? What options can I
-                    use there?</strong
-                >
-                <br />&nbsp;The&nbsp;<code>type</code>&nbsp;attribute in
-                a&nbsp;<code>script</code>&nbsp;tag specifies the type of script
-                being used. In the context of JSX, you would typically
-                use&nbsp;<code>type="text/babel"</code>&nbsp;or&nbsp;<code>type="text/jsx"</code>&nbsp;to
-                indicate that the script contains JSX code.
-            </p>
+				<p class="mb-2 last:mb-0">
+					The&nbsp;<code>type</code>&nbsp;attribute in
+					a&nbsp;<code>&lt;script&gt;</code>&nbsp;tag specifies the
+					MIME type of the script. It's used to indicate the type of
+					script being used, such as JavaScript, JSON, or another
+					language.
+				</p>
+				<p class="mb-2 last:mb-0">
+					The most common value for
+					the&nbsp;<code>type</code>&nbsp;attribute
+					is&nbsp;<code>text/javascript</code>, which indicates that
+					the script is written in JavaScript. However, you can also
+					use other values depending on the type of script you're
+					using.
+				</p>
+				<p class="mb-2 last:mb-0">
+					Here are some common options you can use for
+					the&nbsp;<code>type</code>&nbsp;attribute:
+				</p>
+				<ul>
+					<li>
+						<code>text/javascript</code>: This is the default value
+						and indicates that the script is written in JavaScript.
+					</li>
+					<li>
+						<code>application/javascript</code>: This is an
+						alternative
+						to&nbsp;<code>text/javascript</code>&nbsp;and is also
+						used for JavaScript scripts.
+					</li>
+					<li>
+						<code>module</code>: This value is used for JavaScript
+						modules, which are a new feature in modern JavaScript.
+					</li>
+					<li>
+						<code>application/json</code>: This value is used for
+						JSON data, which can be used to store or transport data
+						in a script.
+					</li>
+					<li>
+						<code>text/ecmascript</code>: This value is used for
+						scripts written in ECMAScript, which is a standardized
+						version of JavaScript.
+					</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					It's worth noting that in HTML5,
+					the&nbsp;<code>type</code>&nbsp;attribute is not required
+					for the&nbsp;<code>&lt;script&gt;</code>&nbsp;tag, and the
+					default value is assumed to
+					be&nbsp;<code>text/javascript</code>. However, it's still a
+					good practice to include
+					the&nbsp;<code>type</code>&nbsp;attribute for clarity and to
+					ensure compatibility with older browsers.
+				</p>
+				<p>
+					<strong
+						>Role of type attribute in script tag? What options can
+						I use there?</strong
+					>
+					<br />&nbsp;The&nbsp;<code>type</code>&nbsp;attribute in
+					a&nbsp;<code>script</code>&nbsp;tag specifies the type of
+					script being used. In the context of JSX, you would
+					typically
+					use&nbsp;<code>type="text/babel"</code>&nbsp;or&nbsp;<code>type="text/jsx"</code>&nbsp;to
+					indicate that the script contains JSX code.
+				</p>
 
-            <p class="mb-2 last:mb-0">
-                <strong>
-                    {TitleComponent} vs {&lt;TitleComponent/&gt;} vs
-                    {&lt;TitleComponent&gt;&lt;/TitleComponent&gt;} in JSX
-                </strong>
-                &nbsp;In JSX,&nbsp;
-                <code> {TitleComponent} </code>
-                &nbsp;is a reference to a React component, while&nbsp;
-                <code> {&lt;TitleComponent/&gt;} </code>
-                &nbsp;and&nbsp;
-                <code> {&lt;TitleComponent&gt;&lt;/TitleComponent&gt;} </code>
-                &nbsp;are both equivalent ways of creating a React element from
-                the&nbsp;
-                <code> TitleComponent </code>
-                &nbsp;component.
-            </p>
-            <p class="mb-2 last:mb-0">
-                The difference between&nbsp;
-                <code> {&lt;TitleComponent/&gt;} </code>
-                &nbsp;and&nbsp;
-                <code> {&lt;TitleComponent&gt;&lt;/TitleComponent&gt;} </code>
-                &nbsp;is that the first one is a self-closing tag, while the
-                second one is an opening and closing tag. In most cases, you can
-                use either one, but the self-closing tag is more commonly used.
-            </p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						{TitleComponent} vs {&lt;TitleComponent/&gt;} vs
+						{&lt;TitleComponent&gt;&lt;/TitleComponent&gt;} in JSX
+					</strong>
+					&nbsp;In JSX,&nbsp;
+					<code> {TitleComponent} </code>
+					&nbsp;is a reference to a React component, while&nbsp;
+					<code> {&lt;TitleComponent/&gt;} </code>
+					&nbsp;and&nbsp;
+					<code>
+						{&lt;TitleComponent&gt;&lt;/TitleComponent&gt;}
+					</code>
+					&nbsp;are both equivalent ways of creating a React element
+					from the&nbsp;
+					<code> TitleComponent </code>
+					&nbsp;component.
+				</p>
+				<p class="mb-2 last:mb-0">
+					The difference between&nbsp;
+					<code> {&lt;TitleComponent/&gt;} </code>
+					&nbsp;and&nbsp;
+					<code>
+						{&lt;TitleComponent&gt;&lt;/TitleComponent&gt;}
+					</code>
+					&nbsp;is that the first one is a self-closing tag, while the
+					second one is an opening and closing tag. In most cases, you
+					can use either one, but the self-closing tag is more
+					commonly used.
+				</p>
 
-            <p class="mb-2 last:mb-0">
-                <strong>Composition of Components</strong>
-            </p>
-            <p class="mb-2 last:mb-0">
-                In object-oriented programming (OOP), composition is a design
-                pattern that allows you to create complex objects from simpler
-                ones by combining them. In the context of components,
-                composition refers to the process of adding a component inside
-                another component.
-            </p>
-            <p class="mb-2 last:mb-0"><strong>Why Composition?</strong></p>
-            <p class="mb-2 last:mb-0">
-                Composition is useful when you want to:
-            </p>
-            <ol>
-                <li>
-                    <strong>Reuse code</strong>: By composing components, you
-                    can reuse code and reduce duplication.
-                </li>
-                <li>
-                    <strong>Create complex UI components</strong>: Composition
-                    enables you to build complex UI components from simpler
-                    ones, making it easier to manage and maintain your codebase.
-                </li>
-                <li>
-                    <strong>Improve modularity</strong>: Composition promotes
-                    modularity by allowing you to break down complex components
-                    into smaller, independent pieces.
-                </li>
-            </ol>
+				<p class="mb-2 last:mb-0">
+					<strong>Composition of Components</strong>
+				</p>
+				<p class="mb-2 last:mb-0">
+					In object-oriented programming (OOP), composition is a
+					design pattern that allows you to create complex objects
+					from simpler ones by combining them. In the context of
+					components, composition refers to the process of adding a
+					component inside another component.
+				</p>
+				<p class="mb-2 last:mb-0"><strong>Why Composition?</strong></p>
+				<p class="mb-2 last:mb-0">
+					Composition is useful when you want to:
+				</p>
+				<ol>
+					<li>
+						<strong>Reuse code</strong>: By composing components,
+						you can reuse code and reduce duplication.
+					</li>
+					<li>
+						<strong>Create complex UI components</strong>:
+						Composition enables you to build complex UI components
+						from simpler ones, making it easier to manage and
+						maintain your codebase.
+					</li>
+					<li>
+						<strong>Improve modularity</strong>: Composition
+						promotes modularity by allowing you to break down
+						complex components into smaller, independent pieces.
+					</li>
+				</ol>
 
-            <!-- Comments are visible in the HTML source only -->
-        </div>
+				<!-- Comments are visible in the HTML source only -->
+			</div>
 
-    <div>
-        <h1>Chapter 04- Talk is cheap, show me the code!</h1>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                1. Is JSX mandatory for React?
-            </strong>
-            &nbsp;No, JSX is not mandatory for React. You can use React without JSX by creating React elements using the&nbsp;
-            <code>
-                React.createElement
-            </code>
-            &nbsp;method. However, JSX is a popular and convenient way to write React components.
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                2. Is ES6 mandatory for React?
-            </strong>
-            &nbsp;No, ES6 is not mandatory for React. While React supports ES6 syntax, you can use older JavaScript versions or even transpile your code to be compatible with older browsers. However, using ES6 syntax can make your code more concise and efficient.
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                3. {TitleComponent} vs {&lt;TitleComponent/&gt;} vs {&lt;TitleComponent&gt;&lt;/TitleComponent&gt;} in JSX
-            </strong>
-            &nbsp;These are different ways to render a React component in JSX:
-        </p>
-        <ul>
-            <li>
-                <code>
-                    {TitleComponent}
-                </code>
-                : This is a plain JavaScript variable or function, not a React component.
-            </li>
-            <li>
-                <code>
-                    {&lt;TitleComponent/&gt;}
-                </code>
-                : This is a self-closing React component, equivalent to&nbsp;
-                <code>
-                    &lt;TitleComponent&gt;&lt;/TitleComponent&gt;
-                </code>
-                .
-            </li>
-            <li>
-                <code>
-                    {&lt;TitleComponent&gt;&lt;/TitleComponent&gt;}
-                </code>
-                : This is a React component with an opening and closing tag, which can contain children elements.
-            </li>
-        </ul>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                4. How can I write comments in JSX?
-            </strong>
-            &nbsp;You can write comments in JSX using the&nbsp;
-            <code>
-                {/* */}
-            </code>
-            &nbsp;syntax, like this:&nbsp;
-            <code>
-                {/* This is a comment */}
-            </code>
-            .
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                5. What is &lt;React.Fragment&gt;&lt;/React.Fragment&gt; and &lt;&gt;&lt;/&gt;?
-            </strong>
-            &nbsp;
-            <code>
-                &lt;React.Fragment&gt;
-            </code>
-            &nbsp;and&nbsp;
-            <code>
-                &lt;&gt;
-            </code>
-            &nbsp;are used to group multiple elements together without adding an extra DOM node. They are equivalent and can be used interchangeably.
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                6. What is Virtual DOM?
-            </strong>
-            &nbsp;The Virtual DOM (VDOM) is a lightweight in-memory representation of the real DOM. React uses the VDOM to optimize rendering by only updating the real DOM when necessary, reducing the number of DOM mutations and improving performance.
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                7. What is Reconciliation in React?
-            </strong>
-            &nbsp;Reconciliation is the process by which React updates the DOM when the state or props of a component change. React uses a diffing algorithm to determine the minimum number of DOM mutations required to update the UI.
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                8. What is React Fiber?
-            </strong>
-            &nbsp;React Fiber is an internal implementation detail of React that allows it to pause and resume rendering work, improving responsiveness and performance. It's a reimplementation of the React core algorithm, introduced in React 16.
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                9. Why do we need keys in React? When do we need keys in React?
-            </strong>
-            &nbsp;We need keys in React to help the library keep track of elements in a list or array. Keys should be unique and stable identifiers for each element. We need keys when rendering lists of elements, such as in&nbsp;
-            <code>
-                map()
-            </code>
-            &nbsp;functions or when using&nbsp;
-            <code>
-                React.Children.toArray()
-            </code>
-            .
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                10. Can we use index as keys in React?
-            </strong>
-            &nbsp;While it's possible to use the index as a key, it's not recommended. Indexes can change when the list is reordered or items are added/removed, leading to unexpected behavior. Instead, use a unique and stable identifier for each element.
-        </p>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                11. What is props in React? Ways to...
-            </strong>
-            &nbsp;Props (short for "properties") are read-only values passed from a parent component to a child component. They are used to customize the behavior of a component. There are several ways to pass props, including:
-        </p>
-        <ul>
-            <li>
-                Using the&nbsp;
-                <code>
-                    props
-                </code>
-                &nbsp;object:&nbsp;
-                <code>
-                    &lt;Component prop1="value1" prop2="value2" /&gt;
-                </code>
-            </li>
-            <li>
-                Using a destructured props object:&nbsp;
-                <code>
-                    const { prop1, prop2 } = props;
-                </code>
-            </li>
-            <li>
-                Using the&nbsp;
-                <code>
-                    React.createElement
-                </code>
-                &nbsp;method:&nbsp;
-                <code>
-                    React.createElement(Component, { prop1: 'value1', prop2: 'value2' });
-                </code>
-            </li>
-        </ul>
-        <p class="mb-2 last:mb-0">
-            <strong>
-                12. What is a Config Driven UI?
-            </strong>
-            &nbsp;A Config Driven UI is an architecture where the UI is generated based on a configuration or metadata, rather than being hardcoded. This approach allows for greater flexibility and customization, as the UI can be easily changed or updated by modifying the configuration.
-        </p>
+			<div>
+				<h1>Chapter 04- Talk is cheap, show me the code!</h1>
+				<p class="mb-2 last:mb-0">
+					<strong> 1. Is JSX mandatory for React? </strong>
+					&nbsp;No, JSX is not mandatory for React. You can use React
+					without JSX by creating React elements using the&nbsp;
+					<code> React.createElement </code>
+					&nbsp;method. However, JSX is a popular and convenient way
+					to write React components.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 2. Is ES6 mandatory for React? </strong>
+					&nbsp;No, ES6 is not mandatory for React. While React
+					supports ES6 syntax, you can use older JavaScript versions
+					or even transpile your code to be compatible with older
+					browsers. However, using ES6 syntax can make your code more
+					concise and efficient.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						3. {TitleComponent} vs {&lt;TitleComponent/&gt;} vs
+						{&lt;TitleComponent&gt;&lt;/TitleComponent&gt;} in JSX
+					</strong>
+					&nbsp;These are different ways to render a React component
+					in JSX:
+				</p>
+				<ul>
+					<li>
+						<code> {TitleComponent} </code>
+						: This is a plain JavaScript variable or function, not a
+						React component.
+					</li>
+					<li>
+						<code> {&lt;TitleComponent/&gt;} </code>
+						: This is a self-closing React component, equivalent
+						to&nbsp;
+						<code>
+							&lt;TitleComponent&gt;&lt;/TitleComponent&gt;
+						</code>
+						.
+					</li>
+					<li>
+						<code>
+							{&lt;TitleComponent&gt;&lt;/TitleComponent&gt;}
+						</code>
+						: This is a React component with an opening and closing
+						tag, which can contain children elements.
+					</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					<strong> 4. How can I write comments in JSX? </strong>
+					&nbsp;You can write comments in JSX using the&nbsp;
+					<code> {/* */} </code>
+					&nbsp;syntax, like this:&nbsp;
+					<code> {/* This is a comment */} </code>
+					.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						5. What is &lt;React.Fragment&gt;&lt;/React.Fragment&gt;
+						and &lt;&gt;&lt;/&gt;?
+					</strong>
+					&nbsp;
+					<code> &lt;React.Fragment&gt; </code>
+					&nbsp;and&nbsp;
+					<code> &lt;&gt; </code>
+					&nbsp;are used to group multiple elements together without
+					adding an extra DOM node. They are equivalent and can be
+					used interchangeably.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 6. What is Virtual DOM? </strong>
+					&nbsp;The Virtual DOM (VDOM) is a lightweight in-memory
+					representation of the real DOM. React uses the VDOM to
+					optimize rendering by only updating the real DOM when
+					necessary, reducing the number of DOM mutations and
+					improving performance.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 7. What is Reconciliation in React? </strong>
+					&nbsp;Reconciliation is the process by which React updates
+					the DOM when the state or props of a component change. React
+					uses a diffing algorithm to determine the minimum number of
+					DOM mutations required to update the UI.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 8. What is React Fiber? </strong>
+					&nbsp;React Fiber is an internal implementation detail of
+					React that allows it to pause and resume rendering work,
+					improving responsiveness and performance. It's a
+					reimplementation of the React core algorithm, introduced in
+					React 16.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong>
+						9. Why do we need keys in React? When do we need keys in
+						React?
+					</strong>
+					&nbsp;We need keys in React to help the library keep track
+					of elements in a list or array. Keys should be unique and
+					stable identifiers for each element. We need keys when
+					rendering lists of elements, such as in&nbsp;
+					<code> map() </code>
+					&nbsp;functions or when using&nbsp;
+					<code> React.Children.toArray() </code>
+					.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 10. Can we use index as keys in React? </strong>
+					&nbsp;While it's possible to use the index as a key, it's
+					not recommended. Indexes can change when the list is
+					reordered or items are added/removed, leading to unexpected
+					behavior. Instead, use a unique and stable identifier for
+					each element.
+				</p>
+				<p class="mb-2 last:mb-0">
+					<strong> 11. What is props in React? Ways to... </strong>
+					&nbsp;Props (short for "properties") are read-only values
+					passed from a parent component to a child component. They
+					are used to customize the behavior of a component. There are
+					several ways to pass props, including:
+				</p>
+				<ul>
+					<li>
+						Using the&nbsp;
+						<code> props </code>
+						&nbsp;object:&nbsp;
+						<code>
+							&lt;Component prop1="value1" prop2="value2" /&gt;
+						</code>
+					</li>
+					<li>
+						Using a destructured props object:&nbsp;
+						<code> const { prop1, prop2 } = props; </code>
+					</li>
+					<li>
+						Using the&nbsp;
+						<code> React.createElement </code>
+						&nbsp;method:&nbsp;
+						<code>
+							React.createElement(Component, { prop1: 'value1',
+							prop2: 'value2' });
+						</code>
+					</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					<strong> 12. What is a Config Driven UI? </strong>
+					&nbsp;A Config Driven UI is an architecture where the UI is
+					generated based on a configuration or metadata, rather than
+					being hardcoded. This approach allows for greater
+					flexibility and customization, as the UI can be easily
+					changed or updated by modifying the configuration.
+				</p>
+			</div>
+		</div>
 
-    </div>
-    </div>
-
-
-
-
-
-
-        <footer>Made with ❤ Niraj Prajapati</footer>
-    </body>
+		<footer>Made with ❤ by Niraj Prajapati</footer>
+	</body>
 </html>
+git
