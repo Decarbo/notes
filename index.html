@@ -633,7 +633,7 @@
 				<!-- Comments are visible in the HTML source only -->
 			</div>
 
-			<div>
+			<div class="4">
 				<h1>Chapter 04- Talk is cheap, show me the code!</h1>
 				<p class="mb-2 last:mb-0">
 					<strong> 1. Is JSX mandatory for React? </strong>
@@ -787,9 +787,219 @@
 					changed or updated by modifying the configuration.
 				</p>
 			</div>
-		</div>
+			<!-- //......................................................................... -->
+			<div>
+				<h1>chapter 5: Let's get Hooked!</h1>
 
+				<p class="mb-2 last:mb-0">
+					<strong>Export Types in JavaScript: A Comparison</strong>
+				</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Export Type</th>
+							<th>Description</th>
+							<th>Syntax</th>
+							<th>Import Syntax</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>Named Export</strong></td>
+							<td>
+								Exports a specific variable or function with a
+								name.
+							</td>
+							<td><code>export const name = 'value';</code></td>
+							<td>
+								<code>import { name } from './file.js';</code>
+							</td>
+						</tr>
+						<tr>
+							<td><strong>Default Export</strong></td>
+							<td>
+								Exports a single value as the default export of
+								a module.
+							</td>
+							<td><code>export default 'value';</code></td>
+							<td>
+								<code>import value from './file.js';</code
+								>&nbsp;or&nbsp;<code
+									>import anyName from './file.js';</code
+								>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>* as export (Namespace Import)</strong>
+							</td>
+							<td>
+								Exports all exports of a module as a single
+								object.
+							</td>
+							<td><code>export * from './file.js';</code></td>
+							<td>
+								<code
+									>import * as namespace from
+									'./file.js';</code
+								>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>&nbsp;</p>
+				<ul>
+					<li>
+						<strong>Named Export</strong>: When you use a named
+						export, you're exporting a specific variable or function
+						with a name. This allows you to import the specific
+						export by its name.
+					</li>
+					<li>
+						<strong>Default Export</strong>: A default export is a
+						single value that is exported as the default export of a
+						module. You can import it without using curly braces,
+						and you can rename it to anything you want.
+					</li>
+					<li>
+						<strong>* as export (Namespace Import)</strong>: This
+						type of export is used to export all exports of a module
+						as a single object. When you import it, you can access
+						all the exports as properties of the imported object.
+					</li>
+				</ul>
+
+				<div><img src="images/image.png" alt="" /></div>
+
+				<p class="mb-2 last:mb-0"></p>
+					<strong><p class="mb-2 last:mb-0">
+					<strong>Export Types in JavaScript: A Comparison</strong>
+				</p></strong>
+				</p>
+				<div
+					class="group relative mb-4 flex items-start md:-ml-12 user-message"
+				>
+					<div class="ml-4 flex-1 space-y-2 overflow-hidden px-1">
+						<div
+							class="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 fix-max-with-100"
+						>
+							<p class="mb-2 last:mb-0">
+								allowing developers to store and manage
+								configuration settings, static data, and other
+								application-wide variables.
+							</p>
+						</div>
+					</div>
+				</div>
+				<p class="mb-2 last:mb-0">
+					In a React application, the&nbsp;
+					<code> config.js </code>
+					&nbsp;file is not a built-in feature like in Next.js, but
+					it's a common practice to create a separate file for
+					configuration settings to keep them organized and easily
+					accessible.
+				</p>
+				<p class="mb-2 last:mb-0">
+					The&nbsp;
+					<code> config.js </code>
+					&nbsp;file in a React application can contain a wide range
+					of configuration options, such as:
+				</p>
+				<ul>
+					<li>Environment variables</li>
+					<li>API keys</li>
+					<li>API endpoints</li>
+					<li>Authentication tokens</li>
+					<li>Logging configurations</li>
+					<li>Feature flags</li>
+					<li>Server settings</li>
+				</ul>
+				<p class="mb-2 last:mb-0">
+					By using a&nbsp;
+					<code> config.js </code>
+					&nbsp;file, developers can keep their application's
+					configuration separate from their code, making it easier to
+					manage and maintain.
+				</p>
+				<div><img src="./images/image2.png" alt=""></div>
+ <div class="group relative mb-4 flex items-start md:-ml-12 user-message">
+	<div class="ml-4 flex-1 space-y-2 overflow-hidden px-1">
+		<div class="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 fix-max-with-100">
+			<p class="mb-2 last:mb-0">
+				In this example, the&nbsp;
+				<code>
+					 useState
+				</code>
+				 &nbsp;hook is used to create a state variable&nbsp;
+				<code>
+					 count
+				</code>
+				 &nbsp;and an&nbsp;
+				<code>
+					 setCount
+				</code>
+				 &nbsp;function to update it. The&nbsp;
+				<code>
+					 count
+				</code>
+				 &nbsp;state is then used in the component's JSX, and the&nbsp;
+				<code>
+					 setCount
+				</code>
+				 &nbsp;function is used in the button's&nbsp;
+				<code>
+					 onClick
+				</code>
+				 &nbsp;event handler.
+			</p>
+			<p class="mb-2 last:mb-0">
+				React Hooks have become a fundamental part of building React applications, and are widely used in the React community.
+			</p>
+		</div>
+	</div>
+</div>
+<div class="group relative mb-4 flex items-start md:-ml-12 user-message"></div>
+<div class="ml-4 flex-1 space-y-2 overflow-hidden px-1">
+<div class="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 fix-max-with-100">
+<div>
+<div class="relative mx-auto max-w-2xl px-4">
+<div class="group relative mb-4 flex items-start md:-ml-12 user-message">
+<div class="ml-4 flex-1 space-y-2 overflow-hidden px-1">
+<div class="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 fix-max-with-100">
+
+</div>
+<div class="flex items-center justify-end transition-opacity group-hover:opacity-100 md:absolute md:-right-10 md:-top-2 md:opacity-0">&nbsp;</div>
+</div>
+</div>
+<div class="shrink-0 bg-border h-[1px] w-full my-4 md:my-8" data-orientation="horizontal">&nbsp;</div>
+</div>
+</div>
+<div>
+<div class="relative mx-auto max-w-2xl px-4">
+<div class="group relative mb-4 flex items-start md:-ml-12">
+<div class="ml-4 flex-1 space-y-2 overflow-hidden px-1"><img class="h-100" alt="" />
+<div class="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 fix-max-with-100">
+<p><strong>Why do we need a <code>use State</code> Hook?</strong></p>
+<p class="mb-2 last:mb-0">We need to use the&nbsp;<code>useState</code>&nbsp;hook in React for several reasons:</p>
+<ol>
+<li><strong>Adding State to Functional Components</strong>: Before Hooks, functional components were stateless, meaning they couldn't have their own state. The&nbsp;<code>useState</code>&nbsp;hook allows us to add state to functional components, making them more powerful and flexible.</li>
+<li><strong>Managing State Changes</strong>: The&nbsp;<code>useState</code>&nbsp;hook provides a way to manage state changes in a predictable and controlled manner. When the state changes, the component re-renders with the new state.</li>
+<li><strong>Simplifying Code</strong>: Using the&nbsp;<code>useState</code>&nbsp;hook simplifies our code by eliminating the need for class components and their associated boilerplate code.</li>
+<li><strong>Improving Performance</strong>: The&nbsp;<code>useState</code>&nbsp;hook helps improve performance by only re-rendering the component when the state changes, rather than re-rendering the entire component tree.</li>
+<li><strong>Enabling Dynamic Behavior</strong>: The&nbsp;<code>useState</code>&nbsp;hook enables dynamic behavior in our components, allowing us to respond to user interactions and update the UI accordingly.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+				<!-- Comments are visible in the HTML source only -->
+			</div>
+		</div>
 		<footer>Made with ❤ by Niraj Prajapati</footer>
 	</body>
 </html>
-git

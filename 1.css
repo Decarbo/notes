@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    margin: 0;
+    margin:0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -60,4 +60,10 @@ footer{
 
 li code{
     font-size: 0.9rem;
+}
+img{
+    width: 100%;
+}
+table{
+    width: 100%;
 }
